@@ -118,7 +118,7 @@ import {
   Legend,
   Filler, // For gradient fills
   ScriptableContext,
-  Color
+  Color,
 } from "chart.js";
 import { motion } from "framer-motion";
 import zoomPlugin from "chartjs-plugin-zoom";
@@ -207,20 +207,15 @@ export default function LiveUpdates() {
   const tooltipTextColor = theme === "dark" ? "#D1D5DB" : "#374151";
 
   // Prepare gradient
-  const getGradient = (ctx: CanvasRenderingContext2D, chartArea: any) => {
+  const getGradient = (ctx: CanvasRenderingContext2D, chartArea: any): CanvasGradient => {
     const gradient = ctx.createLinearGradient(
       0,
       chartArea.bottom,
       0,
       chartArea.top
     );
-    gradient.addColorStop(0, theme === "dark" ? "rgba(99, 102, 241, 0)" : "rgba(99, 102, 241, 0)");
-    gradient.addColorStop(
-      1,
-      theme === "dark"
-        ? "rgba(99, 102, 241, 0.4)"
-        : "rgba(99, 102, 241, 0.4)"
-    );
+    gradient.addColorStop(0, "rgba(99, 102, 241, 0)");
+    gradient.addColorStop(1, "rgba(99, 102, 241, 0.4)");
     return gradient;
   };
 
@@ -231,24 +226,26 @@ export default function LiveUpdates() {
         label: "Rating",
         data: contests.map((contest) => contest.newRating),
         fill: true,
+        backgroundColor: (
+          context: ScriptableContext<"line">
+        ): Color | undefined => {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
 
-        backgroundColor: (context: ScriptableContext<'line'>): Color | undefined => {
-        const chart = context.chart;
-        const { ctx, chartArea } = chart;
-
-        if (!chartArea) {
+          if (!chartArea) {
+            // Return undefined when chartArea is not available
             return undefined;
-        }
-        return getGradient(ctx, chartArea);
+          }
+          return getGradient(ctx, chartArea);
         },
-
         borderColor: "#6366F1", // Indigo-500
         borderWidth: 2,
         tension: 0.4,
         pointRadius: 4,
         pointBackgroundColor: "#6366F1",
         pointBorderWidth: 0,
-        hoverRadius: 6,
+        // Corrected property name
+        pointHoverRadius: 6,
         pointHoverBackgroundColor: "#F59E0B", // Amber-500
         pointHoverBorderColor: "#FFFFFF",
         pointHoverBorderWidth: 2,
