@@ -68,6 +68,14 @@ export const projectsData = [
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
     imageUrl: qrollImg,
   },
+
+  {
+    title: "MindsMom",
+    description:
+      "N/A",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+    imageUrl: qrollImg,
+  },
 ] as const;
 
 export const skillsData = [
