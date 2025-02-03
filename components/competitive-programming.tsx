@@ -38,21 +38,34 @@ type Contest = {
 };
 
 export default function CompetitiveProgramming() {
-  const [contests, setContests] = useState<Contest[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize contests to null
+  const [contests, setContests] = useState<Contest[] | null>(null);
 
   useEffect(() => {
     fetch("/api/competitive-programming")
       .then((response) => response.json())
       .then((data) => {
         setContests(data);
-        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
-        setLoading(false);
+        // Set contests to empty array if there's an error to prevent infinite loading
+        setContests([]);
       });
   }, []);
+
+  // If contests is null, render the loading state
+  if (contests === null) {
+    return (
+      <section className="w-full flex flex-col items-center my-24">
+        <SectionHeading>Competitive Programming</SectionHeading>
+        <div className="my-8">
+          {/* Simple loading text; you can replace this with a spinner */}
+          <p>Loading data...</p>
+        </div>
+      </section>
+    );
+  }
 
   // Prepare data for the chart
   const data = {
@@ -97,21 +110,9 @@ export default function CompetitiveProgramming() {
     },
   };
 
-  if (loading) {
-    return (
-      <section className="w-full flex flex-col items-center my-24">
-        <SectionHeading>Competitive Programming</SectionHeading>
-        <div className="my-8">
-          {/* Simple loading text; you can replace this with a spinner */}
-          <p>Loading data...</p>
-        </div>
-      </section>
-    );
-  }
-
   // Calculate total contests and best rank
   const totalContests = contests.length;
-  const bestRank = Math.min(...contests.map(c => c.rank));
+  const bestRank = contests.length > 0 ? Math.min(...contests.map(c => c.rank)) : null;
 
   return (
     <section className="w-full flex flex-col items-center my-24">
@@ -146,9 +147,11 @@ export default function CompetitiveProgramming() {
         <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
           Total Contests: <span className="font-bold text-indigo-600">{totalContests}</span>
         </p>
-        <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
-          Best Rank: <span className="font-bold text-indigo-600">{bestRank}</span>
-        </p>
+        {bestRank !== null && (
+          <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
+            Best Rank: <span className="font-bold text-indigo-600">{bestRank}</span>
+          </p>
+        )}
       </div>
 
       {/* Rating Chart */}
