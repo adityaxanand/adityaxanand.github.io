@@ -117,6 +117,8 @@ import {
   Tooltip,
   Legend,
   Filler, // For gradient fills
+  ScriptableContext,
+  Color
 } from "chart.js";
 import { motion } from "framer-motion";
 import zoomPlugin from "chartjs-plugin-zoom";
@@ -229,16 +231,17 @@ export default function LiveUpdates() {
         label: "Rating",
         data: contests.map((contest) => contest.newRating),
         fill: true,
-        backgroundColor: (context) => {
-          const chart = context.chart;
-          const { ctx, chartArea } = chart;
 
-          if (!chartArea) {
-            // This case happens on initial chart load
-            return null;
-          }
-          return getGradient(ctx, chartArea);
+        backgroundColor: (context: ScriptableContext<'line'>): Color | undefined => {
+        const chart = context.chart;
+        const { ctx, chartArea } = chart;
+
+        if (!chartArea) {
+            return undefined;
+        }
+        return getGradient(ctx, chartArea);
         },
+
         borderColor: "#6366F1", // Indigo-500
         borderWidth: 2,
         tension: 0.4,
