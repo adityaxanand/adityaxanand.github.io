@@ -126,7 +126,7 @@ export default function Project({
             {projectUrl && (
               <a
                 href={projectUrl}
-                className="text-gray-700 hover:text-gray-900 dark:hover:text-gray-300"
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -136,7 +136,7 @@ export default function Project({
             {githubUrl && (
               <a
                 href={githubUrl}
-                className="text-gray-700 hover:text-gray-900 dark:hover:text-gray-300"
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
