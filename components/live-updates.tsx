@@ -338,10 +338,11 @@ export default function LiveUpdates() {
           padding: 10,
         },
         grid: {
-          color: gridColor,
-          borderDash: [5, 5],
-          drawBorder: false,
-        },
+            color: gridColor,
+            // drawBorder: false,
+            lineWidth: 1, // Ensure the dashed effect is visible
+            tickBorderDash: [5, 5], // Correct way to apply dashed lines in latest Chart.js versions
+          },          
       },
     },
     interaction: {
