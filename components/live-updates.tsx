@@ -307,15 +307,18 @@ export default function LiveUpdates() {
                 borderDash: [5, 5],
                 label: {
                   content: "Highest Rating",
-                  enabled: true,
                   position: "start",
                   backgroundColor: "#10B981",
                   color: "#FFFFFF",
+                  display: true, // Correct property
+                  font: {
+                    size: 12,
+                  },
                 },
               },
             }
           : {},
-      },
+      },      
     },
     scales: {
       x: {
