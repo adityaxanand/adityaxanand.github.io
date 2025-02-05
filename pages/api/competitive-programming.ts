@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const data = await fetchCompetitiveProgrammingData('anandxaditya');
+    const data = await fetchCompetitiveProgrammingData('adityaxanand');
 
     // Log the data for debugging purposes
     console.log("Data fetched from Codeforces API:", data);
