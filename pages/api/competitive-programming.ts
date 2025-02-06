@@ -37,6 +37,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
+<<<<<<< HEAD
     // Read the username from the environment variable
     const username = process.env.NEXT_PUBLIC_CODEFORCES_USERNAME;
 
@@ -45,6 +46,9 @@ export default async function handler(
     }
 
     const data = await fetchCompetitiveProgrammingData(username);
+=======
+    const data = await fetchCompetitiveProgrammingData('adityaxanand');
+>>>>>>> 90ee940f000388da0df34ccd295b290a3bb18837
 
     // Log the data for debugging purposes
     console.log("Data fetched from Codeforces API:", data);
