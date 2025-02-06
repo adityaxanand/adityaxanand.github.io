@@ -20,6 +20,7 @@
     "chartjs-plugin-annotation": "^3.1.0",
     "chartjs-plugin-zoom": "^2.2.0",
     "clsx": "^1.2.1",
+    "dotenv": "^16.4.7",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "framer-motion": "^10.18.0",
