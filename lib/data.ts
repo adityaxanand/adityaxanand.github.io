@@ -2,9 +2,12 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+
 import mindsMomImg from "@/public/mindsmom.png";
 import qrollImg from "@/public/qroll.png";
 import portfolioImg from "@/public/portfolio.png"
+import dinendecodeImg from "@/public/dinendecode.png"
+import xv6Img from "@/public/xv6.png"
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -87,6 +90,26 @@ export const projectsData = [
   },
 
   {
+    title: "xv-6 Altered OS",
+    description:
+      "Modified the xv-6 Operating System and made the problems solutions.",
+    tags: ["Assembly", "Operating Systems", "C/C++", "Kernel"],
+    imageUrl: xv6Img,
+    projectUrl:"https://github.com/adityaxanand/xv6-altered",
+    githubUrl:"https://github.com/adityaxanand/xv6-altered",
+  },
+
+  {
+    title: "Dine N Decode",
+    description:
+      "Cleaned, visualized, and modeled restaurant data to analyze trends and predict costs.",
+    tags: ["AI/ML", "Seaborn", "Python", "NumPy", "Pandas"],
+    imageUrl: dinendecodeImg,
+    projectUrl:"https://github.com/adityaxanand/DineNDecode",
+    githubUrl:"https://github.com/adityaxanand/DineNDecode",
+  },
+
+  {
     title: "Personal Portfolio",
     description:
       "Used Next.JS to build this personal portfolio website which shows all my achievements and projects.",
@@ -127,6 +150,57 @@ export const skillsData = [
   "Linux",
   "Kernel"
 ] as const;
+
+// export const achievementsData = [
+//   {
+//     title: "1st Prize Winner - VISIONARY Hackathon",
+//     description: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
+//   },
+//   {
+//     title: "4 Star on CodeChef",
+//     description: "Ranked 4 Star on CodeChef a Competitive Programming platform",
+//   },
+//   {
+//     title: "LeetCode 1480+ Rating",
+//     description: "Achieved a 1480+ rating on LeetCode with 150+ solved problems.",
+//   },
+//   {
+//     title: "Open Source Contributor",
+//     description: "Contributed to multiple open-source projects on GitHub.",
+//   },
+// ] as const;
+
+export const achievementsData = [
+
+  {
+    title: "ICPC Asia Regionalist '24",
+    shortDescription: "Been ICPC Asia Regionalist '24, one of the top contest for competitive programming, where players take part globally.",
+    description:
+      "Been ICPC Asia Regionalist '24, one of the top contest for competitive programming, where players take part globally.",
+    imageUrl: qrollImg,
+    link: "https://google.com/certification",
+  },
+
+  {
+    title: "1st Prize Winner - VISIONARY Hackathon",
+    shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
+    description:
+      "Developed an AI-powered chatbot for mental health support. Worked with OpenAI API, React, and Node.js.",
+    imageUrl: qrollImg,
+    link: "https://example.com/hackathon",
+  },
+
+  {
+    title: "4 Star on CodeChef",
+    shortDescription: "Ranked 4 Star on CodeChef a Competitive Programming platform. Rating: 1829",
+    description:
+      "Ranked 4 Star on CodeChef a Competitive Programming platform.",
+    imageUrl: qrollImg,
+    link: "https://google.com/certification",
+  },
+];
+
+
 
 
 // import React from "react";

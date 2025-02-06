@@ -5,7 +5,9 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import Achievements from "@/components/achievements";
 import CompetitiveProgramming from "@/components/competitive-programming";
+
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Experience />
+      <Achievements />
       <CompetitiveProgramming />
       <Contact />
     </main>
