@@ -8,14 +8,14 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    title: "Top 100 in Codeforces Round #650",
+    title: "Top 100 in Codeforces Round #",
     description: "Achieved a personal best rank among thousands of participants.",
-    date: "2023-05-10",
+    date: "2024-05-10",
   },
   {
-    title: "Winner of University Coding Contest",
-    description: "Secured first place in the annual university programming competition.",
-    date: "2022-11-15",
+    title: "3rd position in Game of Codes KIIT FEST 7.0",
+    description: "Secured third position in the annual fest event.",
+    date: "2024-01-02",
   },
   // Add more achievements as needed.
 ];

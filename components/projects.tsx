@@ -5,6 +5,7 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
+import OtherProjects from "@/components/other-projects";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
@@ -19,6 +20,7 @@ export default function Projects() {
           </React.Fragment>
         ))}
       </div>
+      <OtherProjects />
     </section>
   );
 }

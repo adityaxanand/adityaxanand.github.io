@@ -9,6 +9,12 @@ import portfolioImg from "@/public/portfolio.png"
 import dinendecodeImg from "@/public/dinendecode.png"
 import xv6Img from "@/public/xv6.png"
 import talkingJunctionImg from "@/public/talkingjunction.png"
+
+import hactoberfestImg from "@/public/hacktoberfest.jpeg"
+import hackathonImg from "@/public/hackathon.png"
+import icpcImg from "@/public/icpc.jpeg"
+import codechefImg from "@/public/codechef.png"
+import gdscImg from "@/public/gdsc.jpeg"
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -60,12 +66,21 @@ export const experiencesData = [
     date: "September, 2024 - November, 2024",
   },
   {
-    title: "App Developer",
+    title: "Senior Technical Executive",
     location: "FED Entrepreneurial Society, Bhubaneswar, India",
     description:
-      "My contributions include assisting in the development of the front end of a mobile application for iOS/Android using Dart and the Flutter framework. I worked with Google Firebase to manage user-inputted data. Utilized Android Studio as a development environment for both iOS and Android.",
+      "Organized and conducted major events, including hackathons in our flagship event Omega 4.0, managed and mentored junior developers, served on panels for hackathons and other technical events, providing expert insights and guidance. Participated in interviewing and recruitment drives, contributing to the selection of top talent.",
     icon: React.createElement(FaReact),
     date: "December, 2023 - Present",
+  },
+
+  {
+    title: "App Developer",
+    location: "Coding Ninjas - KIIT Chapter",
+    description:
+      "Did nothing much serious lol.",
+    icon: React.createElement(FaReact),
+    date: "January, 2024 - Present",
   },
 ] as const;
 
@@ -83,8 +98,8 @@ export const projectsData = [
   {
     title: "QRoll",
     description:
-      "QR bases attendance system.",
-    tags: ["React", "Node.JS", "MongoDB", "CSS"],
+      "QR based attendance system of any event created. Biometric verification before QR Validation.",
+    tags: ["React", "Node.JS", "MongoDB", "OpenCV"],
     imageUrl: qrollImg,
     projectUrl:"https://github.com/adityaxanand/QRoll",
     githubUrl:"https://github.com/adityaxanand/QRoll",
@@ -188,7 +203,7 @@ export const achievementsData = [
     shortDescription: "Qualified as an ICPC Asia Regionalist 2024, competing in one of the most prestigious global programming contests.",
     description:
       "Participated in ICPC Asia Regionals 2024, showcasing problem-solving skills and algorithmic expertise in a globally recognized competitive programming event.",
-    imageUrl: qrollImg,
+    imageUrl: icpcImg,
     link: "https://codeforces.com/blog/entry/53241",
   },
 
@@ -197,7 +212,7 @@ export const achievementsData = [
     shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
     description:
       "Developed, MediAR enhances healthcare by providing AR-based surgical visualizations, helping doctors plan procedures and patients understand treatments through immersive experiences.",
-    imageUrl: qrollImg,
+    imageUrl: hackathonImg,
     link: "https://xathon.mettl.com/event/",
   },
 
@@ -206,8 +221,17 @@ export const achievementsData = [
     shortDescription: "Achieved a 4-Star rating (1829) on CodeChef, excelling in competitive programming challenges.",
     description:
       "Consistently solved complex algorithmic problems on CodeChef, improving problem-solving skills and ranking among top competitive programmers.",
-    imageUrl: qrollImg,
+    imageUrl: codechefImg,
     link: "https://codechef.com/users/adityaxanand",
+  },
+
+  {
+    title: "CodeCrate - NIT Durgapur Contest",
+    shortDescription: "Secured 1st position in the college event online contest conducted by RECursion Society.",
+    description:
+      "Secured 1st position in the college event online contest conducted and got 7k as a prize money.",
+    imageUrl: hactoberfestImg,
+    link: "https://github.com/adityaxanand",
   },
 
   {
@@ -215,7 +239,7 @@ export const achievementsData = [
     shortDescription: "Contributed to various projects in application development, focusing on creating innovative and user-friendly solutions.",
     description:
       "Developed a safety application aimed at enhancing user security and providing real-time alerts. Worked on AI/ML development projects, including a data mining project to extract valuable insights from large datasets.",
-    imageUrl: qrollImg,
+    imageUrl: hactoberfestImg,
     link: "https://github.com/adityaxanand",
   },
 
@@ -224,7 +248,7 @@ export const achievementsData = [
     shortDescription: "Attended tech events, contributed to web projects, and assisted in organizing small events.",
     description:
       "I participated in various tech events, in development and networking. Contributed to projects, improving the user experience. Additionally, helped in organizing small events, ensuring smooth execution among participants.",
-    imageUrl: qrollImg,
+    imageUrl: gdscImg,
     link: "https://github.com/adityaxanand",
   },
 ];
