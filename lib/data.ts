@@ -8,6 +8,7 @@ import qrollImg from "@/public/qroll.png";
 import portfolioImg from "@/public/portfolio.png"
 import dinendecodeImg from "@/public/dinendecode.png"
 import xv6Img from "@/public/xv6.png"
+import talkingJunctionImg from "@/public/talkingjunction.png"
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -102,11 +103,21 @@ export const projectsData = [
   {
     title: "Dine N Decode",
     description:
-      "Cleaned, visualized, and modeled restaurant data to analyze trends and predict costs.",
+      "Cleaned, visualized, and modeled restaurant data (Dataset: Zomato) to analyze trends and predict costs.",
     tags: ["AI/ML", "Seaborn", "Python", "NumPy", "Pandas"],
     imageUrl: dinendecodeImg,
     projectUrl:"https://github.com/adityaxanand/DineNDecode",
     githubUrl:"https://github.com/adityaxanand/DineNDecode",
+  },
+
+  {
+    title: "Talking Junction",
+    description:
+      "A real-time chat application inspired by LetsChat, built on modern tech.",
+    tags: ["React.JS", "Node.JS", "Tailwind", "MongoDB", "Socket.IO", "FireB"],
+    imageUrl: talkingJunctionImg,
+    projectUrl:"https://github.com/adityaxanand/TalkingJunction",
+    githubUrl:"https://github.com/adityaxanand/TalkingJunction",
   },
 
   {
@@ -174,29 +185,47 @@ export const achievementsData = [
 
   {
     title: "ICPC Asia Regionalist '24",
-    shortDescription: "Been ICPC Asia Regionalist '24, one of the top contest for competitive programming, where players take part globally.",
+    shortDescription: "Qualified as an ICPC Asia Regionalist 2024, competing in one of the most prestigious global programming contests.",
     description:
-      "Been ICPC Asia Regionalist '24, one of the top contest for competitive programming, where players take part globally.",
+      "Participated in ICPC Asia Regionals 2024, showcasing problem-solving skills and algorithmic expertise in a globally recognized competitive programming event.",
     imageUrl: qrollImg,
-    link: "https://google.com/certification",
+    link: "https://codeforces.com/blog/entry/53241",
   },
 
   {
     title: "1st Prize Winner - VISIONARY Hackathon",
     shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
     description:
-      "Developed an AI-powered chatbot for mental health support. Worked with OpenAI API, React, and Node.js.",
+      "Developed, MediAR enhances healthcare by providing AR-based surgical visualizations, helping doctors plan procedures and patients understand treatments through immersive experiences.",
     imageUrl: qrollImg,
-    link: "https://example.com/hackathon",
+    link: "https://xathon.mettl.com/event/",
   },
 
   {
     title: "4 Star on CodeChef",
-    shortDescription: "Ranked 4 Star on CodeChef a Competitive Programming platform. Rating: 1829",
+    shortDescription: "Achieved a 4-Star rating (1829) on CodeChef, excelling in competitive programming challenges.",
     description:
-      "Ranked 4 Star on CodeChef a Competitive Programming platform.",
+      "Consistently solved complex algorithmic problems on CodeChef, improving problem-solving skills and ranking among top competitive programmers.",
     imageUrl: qrollImg,
-    link: "https://google.com/certification",
+    link: "https://codechef.com/users/adityaxanand",
+  },
+
+  {
+    title: "Hacktoberfest - Open Source Contributor",
+    shortDescription: "Contributed to various projects in application development, focusing on creating innovative and user-friendly solutions.",
+    description:
+      "Developed a safety application aimed at enhancing user security and providing real-time alerts. Worked on AI/ML development projects, including a data mining project to extract valuable insights from large datasets.",
+    imageUrl: qrollImg,
+    link: "https://github.com/adityaxanand",
+  },
+
+  {
+    title: "Google Developer Student Clubs - Ranchi",
+    shortDescription: "Attended tech events, contributed to web projects, and assisted in organizing small events.",
+    description:
+      "I participated in various tech events, in development and networking. Contributed to projects, improving the user experience. Additionally, helped in organizing small events, ensuring smooth execution among participants.",
+    imageUrl: qrollImg,
+    link: "https://github.com/adityaxanand",
   },
 ];
 
