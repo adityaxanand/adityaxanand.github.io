@@ -9,6 +9,7 @@ import portfolioImg from "@/public/portfolio.png"
 import dinendecodeImg from "@/public/dinendecode.png"
 import xv6Img from "@/public/xv6.png"
 import talkingJunctionImg from "@/public/talkingjunction.png"
+import phytoSenseImg from "@/public/phytosense.png"
 
 import hactoberfestImg from "@/public/hacktoberfest.jpeg"
 import hackathonImg from "@/public/hackathon.png"
@@ -85,6 +86,15 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "PhytoSense",
+    description:
+      "Diagnose plant diseases using AI-powered insights and receive actionable recommendations for healthier crops.",
+    tags: ["NEXT.JS", "Tailwind", "Flask", "Gemini API", "Python", "PyTorch"],
+    imageUrl: phytoSenseImg,
+    projectUrl:"https://phytosenseai.vercel.app",
+    githubUrl:"https://github.com/adityaxanand/PhytoSense",
+  },
   {
     title: "MindsMom",
     description:

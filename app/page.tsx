@@ -7,6 +7,7 @@ import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 import Achievements from "@/components/achievements";
 import CompetitiveProgramming from "@/components/competitive-programming";
+import Certifications from "@/components/certifications";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Experience />
       <Achievements />
       <CompetitiveProgramming />
+      <Certifications />
       <Contact />
     </main>
   );
