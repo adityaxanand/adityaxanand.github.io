@@ -34,8 +34,8 @@ export default function Intro() {
             style={{
               // backgroundImage: 'url(https://lh3.googleusercontent.com/a/ACg8ocLyrFHA-N7T-A7gfZl27hESd1pw9z9QK-te3jVHUURshzY=s1092-p-no)',
               // https://i.ibb.co/S4CjwKCb/addiii.jpg
-              //backgroundImage: 'url(https://i.postimg.cc/tTvvXTxV/profileaditya.jpg)',
-              backgroundImage: 'url(https://i.ibb.co/S4CjwKCb/addiii.jpg)',
+              backgroundImage: 'url(https://i.postimg.cc/tTvvXTxV/profileaditya.jpg)',
+              // backgroundImage: 'url(https://i.ibb.co/S4CjwKCb/addiii.jpg)',
             }}
           ></motion.div>
 
