@@ -6,24 +6,10 @@ import { FaCertificate } from "react-icons/fa";
 
 const certifications = [
   {
-    title: "Google Developer Student Clubs - Ranchi",
-    description:
-      "Attended various events and contributed to website development and small events.",
-    issuedBy: "Google DSC",
-    date: "2024",
-  },
-  {
     title: "ICPC Asia Regionalist '24",
     description:
       "Qualified as an ICPC Asia Regionalist in 2024, one of the top global competitive programming contests.",
     issuedBy: "ICPC",
-    date: "2024",
-  },
-  {
-    title: "4 Star on CodeChef",
-    description:
-      "Achieved a 4-star rating on CodeChef with a peak rating of 1829, demonstrating strong problem-solving skills.",
-    issuedBy: "CodeChef",
     date: "2024",
   },
 ];
