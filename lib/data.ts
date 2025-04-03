@@ -10,6 +10,7 @@ import dinendecodeImg from "@/public/dinendecode.png"
 import xv6Img from "@/public/xv6.png"
 import talkingJunctionImg from "@/public/talkingjunction.png"
 import phytoSenseImg from "@/public/phytosense.png"
+import scholarScaleImg from "@/public/scholarscale.png"
 
 import hactoberfestImg from "@/public/hacktoberfest.jpeg"
 import hackathonImg from "@/public/hackathon.png"
@@ -143,6 +144,16 @@ export const projectsData = [
     imageUrl: talkingJunctionImg,
     projectUrl:"https://github.com/adityaxanand/TalkingJunction",
     githubUrl:"https://github.com/adityaxanand/TalkingJunction",
+  },
+
+  {
+    title: "Scholar Scale",
+    description:
+      "Used Streamlit to build this CGPA Calculator website which calculates the SGPA + CGPA on Credit Points.",
+    tags: ["Python", "Streamlit"],
+    imageUrl: scholarScaleImg,
+    projectUrl:"https://scholarscale.streamlit.app",
+    githubUrl:"https://github.com/adityaxanand/ScholarScale",
   },
 
   {
