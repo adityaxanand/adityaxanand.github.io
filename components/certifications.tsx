@@ -3,6 +3,7 @@ import React from "react";
 import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
 import { FaCertificate } from "react-icons/fa";
+import SectionHeading from "./section-heading";
 
 const certifications = [
   {
@@ -16,8 +17,8 @@ const certifications = [
 
 const Certifications = () => {
   return (
-    <section className="py-10 px-6">
-      <h2 className="text-3xl font-bold text-center mb-8">Certifications</h2>
+    <section className="w-full flex flex-col items-center my-24">
+          <SectionHeading>Certifications</SectionHeading>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {certifications.map((cert, index) => (
           <motion.div

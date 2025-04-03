@@ -478,10 +478,13 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { SiCodeforces, SiCodechef } from "react-icons/si";
 import Highlights from "./highlights";
-import LiveUpdates from "./live-updates";
+import LiveUpdates from "./codeforces-live-updates";
 import ProblemWriteups from "./problem-writeups";
 import ContestStatistics from "./contest-statistics";
 import ContestDetails from "./contest-details"; // Import ContestDetails here
+import CodechefLiveUpdates from "./codechef-live-updates";
+import { motion } from "framer-motion";
+import CodeforcesLiveUpdates from "./codeforces-live-updates";
 
 export default function CompetitiveProgramming() {
   return (
@@ -514,7 +517,12 @@ export default function CompetitiveProgramming() {
 
       {/* Live Rating Chart */}
       <div className="w-full max-w-6xl px-4 mb-12">
-        <LiveUpdates />
+        <CodeforcesLiveUpdates />
+      </div>
+
+      {/* Live Rating Chart */}
+      <div className="w-full max-w-6xl px-4 mb-12">
+        <CodechefLiveUpdates />
       </div>
 
       {/* Grid of Blocks */}

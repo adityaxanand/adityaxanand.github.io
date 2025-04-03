@@ -1,106 +1,4 @@
-// // components/live-updates.tsx
-
-// "use client";
-
-// import React, { useEffect, useState } from "react";
-// import { SiCodeforces } from "react-icons/si";
-// import { Line } from "react-chartjs-2";
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Tooltip,
-//   Legend,
-// } from "chart.js";
-
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Tooltip,
-//   Legend
-// );
-
-// type RatingData = {
-//   date: string;
-//   rating: number;
-// };
-
-// export default function LiveUpdates() {
-//   const [ratingData, setRatingData] = useState<RatingData[] | null>(null);
-//   const [currentRating, setCurrentRating] = useState<number | null>(null);
-
-//   useEffect(() => {
-//     fetch("/api/codeforces-rating")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setRatingData(data.history);
-//         setCurrentRating(data.currentRating);
-//       })
-//       .catch((err) => {
-//         console.error(err);
-//       });
-//   }, []);
-
-//   if (ratingData === null) {
-//     return (
-//       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg h-full flex items-center justify-center">
-//         <p>Loading data...</p>
-//       </div>
-//     );
-//   }
-
-//   const chartData = {
-//     labels: ratingData.map((item) => item.date),
-//     datasets: [
-//       {
-//         label: "Codeforces Rating",
-//         data: ratingData.map((item) => item.rating),
-//         fill: false,
-//         backgroundColor: "#1f8acb",
-//         borderColor: "#1f8acb",
-//         tension: 0.4,
-//       },
-//     ],
-//   };
-
-//   const options = {
-//     responsive: true,
-//     maintainAspectRatio: false,
-//   };
-
-//   return (
-//     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg h-full flex flex-col">
-//       <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">
-//         Live Updates
-//       </h3>
-
-//       {currentRating !== null && (
-//         <div className="flex items-center mb-6">
-//           <SiCodeforces className="text-3xl text-[#1f8acb] mr-4" />
-//           <div>
-//             <p className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-//               Current Codeforces Rating
-//             </p>
-//             <p className="text-2xl font-bold text-indigo-600">
-//               {currentRating}
-//             </p>
-//           </div>
-//         </div>
-//       )}
-
-//       <div className="flex-1 relative">
-//         <Line data={chartData} options={options} />
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// components/live-updates.tsx
+// components/codeforces-live-updates.tsx
 
 "use client";
 
@@ -116,7 +14,7 @@ import {
   LineElement,
   Tooltip,
   Legend,
-  Filler, // For gradient fills
+  Filler,
   ScriptableContext,
   Color,
 } from "chart.js";
@@ -140,17 +38,19 @@ ChartJS.register(
 
 type Contest = {
   date: string;
-  newRating: number;
+  rating: number;
 };
 
-export default function LiveUpdates() {
+export default function CodechefLiveUpdates() {
   const { theme } = useTheme();
   const [contests, setContests] = useState<Contest[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const chartRef = useRef<ChartJS<"line">>(null);
 
+  const username = process.env.NEXT_PUBLIC_CODECHEF_USERNAME || "adityaxanand";
+
   useEffect(() => {
-    fetch("/api/competitive-programming")
+    fetch(`https://codechef-api.vercel.app/handle/${username}`)
       .then(async (response) => {
         if (!response.ok) {
           const errorData = await response.json();
@@ -159,14 +59,20 @@ export default function LiveUpdates() {
         return response.json();
       })
       .then((data) => {
-        // Sort contests by date
-        data.sort((a: any, b: any) => a.date - b.date);
+        // Extract the ratingData array from the response
+        const ratingData = data.ratingData;
+        // Sort contests by the end_date field
+        ratingData.sort(
+          (a: any, b: any) =>
+            new Date(a.end_date).getTime() - new Date(b.end_date).getTime()
+        );
 
-        const formattedData = data.map((contest: any) => ({
-          date: new Date(contest.date).toLocaleDateString(),
-          newRating: contest.newRating,
-          dateValue: contest.date,
+        // Map the contests to our Contest type
+        const formattedData = ratingData.map((contest: any) => ({
+          date: new Date(contest.end_date).toLocaleDateString(),
+          rating: parseInt(contest.rating, 10),
         }));
+
         setContests(formattedData);
         setLoading(false);
       })
@@ -185,7 +91,6 @@ export default function LiveUpdates() {
     );
   }
 
-  // Handle case when there is no data
   if (contests.length === 0) {
     return (
       <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl h-full flex items-center justify-center">
@@ -194,20 +99,23 @@ export default function LiveUpdates() {
     );
   }
 
-  // Compute highest rating for annotations
+  // Compute the highest rating for annotation purposes
   const highestRating =
     contests.length > 0
-      ? Math.max(...contests.map((contest) => contest.newRating))
+      ? Math.max(...contests.map((contest) => contest.rating))
       : null;
 
-  // Dynamic colors based on theme
-  const textColor = theme === "dark" ? "#D1D5DB" : "#374151"; // Gray-300 and Gray-700
-  const gridColor = theme === "dark" ? "#374151" : "#D1D5DB"; // Gray-700 and Gray-300
-  const tooltipBgColor = theme === "dark" ? "#1F2937" : "#FFFFFF"; // Gray-800 and White
+  // Define colors based on theme
+  const textColor = theme === "dark" ? "#D1D5DB" : "#374151";
+  const gridColor = theme === "dark" ? "#374151" : "#D1D5DB";
+  const tooltipBgColor = theme === "dark" ? "#1F2937" : "#FFFFFF";
   const tooltipTextColor = theme === "dark" ? "#D1D5DB" : "#374151";
 
-  // Prepare gradient
-  const getGradient = (ctx: CanvasRenderingContext2D, chartArea: any): CanvasGradient => {
+  // Function to create a gradient for the chart fill
+  const getGradient = (
+    ctx: CanvasRenderingContext2D,
+    chartArea: any
+  ): CanvasGradient => {
     const gradient = ctx.createLinearGradient(
       0,
       chartArea.bottom,
@@ -224,29 +132,24 @@ export default function LiveUpdates() {
     datasets: [
       {
         label: "Rating",
-        data: contests.map((contest) => contest.newRating),
+        data: contests.map((contest) => contest.rating),
         fill: true,
         backgroundColor: (
           context: ScriptableContext<"line">
         ): Color | undefined => {
           const chart = context.chart;
           const { ctx, chartArea } = chart;
-
-          if (!chartArea) {
-            // Return undefined when chartArea is not available
-            return undefined;
-          }
+          if (!chartArea) return undefined;
           return getGradient(ctx, chartArea);
         },
-        borderColor: "#6366F1", // Indigo-500
+        borderColor: "#6366F1",
         borderWidth: 2,
         tension: 0.4,
         pointRadius: 4,
         pointBackgroundColor: "#6366F1",
         pointBorderWidth: 0,
-        // Corrected property name
         pointHoverRadius: 6,
-        pointHoverBackgroundColor: "#F59E0B", // Amber-500
+        pointHoverBackgroundColor: "#F59E0B",
         pointHoverBorderColor: "#FFFFFF",
         pointHoverBorderWidth: 2,
       },
@@ -278,12 +181,8 @@ export default function LiveUpdates() {
       },
       zoom: {
         zoom: {
-          wheel: {
-            enabled: true,
-          },
-          pinch: {
-            enabled: true,
-          },
+          wheel: { enabled: true },
+          pinch: { enabled: true },
           mode: "xy",
         },
         pan: {
@@ -302,7 +201,7 @@ export default function LiveUpdates() {
                 type: "line",
                 yMin: highestRating,
                 yMax: highestRating,
-                borderColor: "#10B981", // Emerald-500
+                borderColor: "#10B981",
                 borderWidth: 2,
                 borderDash: [5, 5],
                 label: {
@@ -310,15 +209,13 @@ export default function LiveUpdates() {
                   position: "start",
                   backgroundColor: "#10B981",
                   color: "#FFFFFF",
-                  display: true, // Correct property
-                  font: {
-                    size: 12,
-                  },
+                  display: true,
+                  font: { size: 12 },
                 },
               },
             }
           : {},
-      },      
+      },
     },
     scales: {
       x: {
@@ -338,11 +235,10 @@ export default function LiveUpdates() {
           padding: 10,
         },
         grid: {
-            color: gridColor,
-            // drawBorder: false,
-            lineWidth: 1, // Ensure the dashed effect is visible
-            tickBorderDash: [5, 5], // Correct way to apply dashed lines in latest Chart.js versions
-          },          
+          color: gridColor,
+          lineWidth: 1,
+          tickBorderDash: [5, 5],
+        },
       },
     },
     interaction: {
@@ -366,7 +262,7 @@ export default function LiveUpdates() {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-6">
-        Live Rating Chart
+        Live Codechef Rating Chart
       </h3>
       <div className="h-80 relative">
         <Line ref={chartRef} data={chartData} options={options} />
