@@ -228,14 +228,14 @@ export const achievementsData = [
     link: "https://codeforces.com/blog/entry/53241",
   },
 
-  {
-    title: "1st Prize Winner - VISIONARY Hackathon",
-    shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
-    description:
-      "Developed, MediAR enhances healthcare by providing AR-based surgical visualizations, helping doctors plan procedures and patients understand treatments through immersive experiences.",
-    imageUrl: hackathonImg,
-    link: "https://xathon.mettl.com/event/",
-  },
+  // {
+  //   title: "1st Prize Winner - VISIONARY Hackathon",
+  //   shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
+  //   description:
+  //     "Developed, MediAR enhances healthcare by providing AR-based surgical visualizations, helping doctors plan procedures and patients understand treatments through immersive experiences.",
+  //   imageUrl: hackathonImg,
+  //   link: "https://xathon.mettl.com/event/",
+  // },
 
   {
     title: "4 Star on CodeChef",
