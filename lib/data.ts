@@ -13,11 +13,13 @@ import phytoSenseImg from "@/public/phytosense.png"
 import scholarScaleImg from "@/public/scholarscale.png"
 
 import hactoberfestImg from "@/public/hacktoberfest.jpeg"
-import hackathonImg from "@/public/hackathon.png"
+// import hackathonImg from "@/public/hackathon.png"
 import icpcImg from "@/public/icpc.jpeg"
 import codechefImg from "@/public/codechef.png"
 import gdscImg from "@/public/gdsc.jpeg"
+import mockorbitImg from "@/public/mockorbit.png"
 // import wordanalyticsImg from "@/public/wordanalytics.png";
+
 
 export const links = [
   {
@@ -88,16 +90,25 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "PhytoSense",
+    title: "Mock Orbit",
+    description:
+      "A free Peer to Peer interviewing platform for collaborative, real-time mock interviews with peers.",
+    tags: ["Go", "Next.js", "MongoDB", "Web Sockets", "AWS", "Docker"],
+    imageUrl: mockorbitImg,
+    projectUrl:"https://mockorbit.duckdns.org",
+    githubUrl:"https://github.com/adityaxanand/MockOrbit",
+  },
+  {
+    title: "Phyto Sense",
     description:
       "Diagnose plant diseases using AI-powered insights and receive actionable recommendations for healthier crops.",
-    tags: ["NEXT.JS", "Tailwind", "Flask", "Gemini API", "Python", "PyTorch"],
+    tags: ["NEXT.JS", "Tailwind", "Flask", "Gemini API", "AI/ML", "PyTorch"],
     imageUrl: phytoSenseImg,
     projectUrl:"https://phytosenseai.vercel.app",
     githubUrl:"https://github.com/adityaxanand/PhytoSense",
   },
   {
-    title: "MindsMom",
+    title: "Minds Mom",
     description:
       "Made to assess mental health, resources & get guidance. Looking self-help tools or peer support?",
     tags: ["Kotlin", "OpenAI API", "MongoDB", "Java", "Jetpack Compose"],
@@ -107,7 +118,7 @@ export const projectsData = [
   },
 
   {
-    title: "QRoll",
+    title: "Q Roll",
     description:
       "QR based attendance system of any event created. Biometric verification before QR Validation.",
     tags: ["React", "Node.JS", "MongoDB", "OpenCV"],
