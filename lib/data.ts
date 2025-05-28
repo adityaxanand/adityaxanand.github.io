@@ -92,7 +92,7 @@ export const projectsData = [
   {
     title: "Mock Orbit",
     description:
-      "A free Peer to Peer interviewing platform for collaborative, real-time mock interviews with peers.",
+      "A Peer to Peer interviewing SAAS platform for collaborative, real-time mock interviews with peers.",
     tags: ["Go", "Next.js", "MongoDB", "Web Sockets", "AWS", "Docker"],
     imageUrl: mockorbitImg,
     projectUrl:"https://mockorbit.duckdns.org",
