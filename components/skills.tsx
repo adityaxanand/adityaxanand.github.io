@@ -69,6 +69,8 @@
 
 
 
+// components/Skills.tsx
+
 "use client";
 
 import React from "react";
@@ -87,33 +89,8 @@ const fadeInAnimationVariants = {
     y: 0,
     transition: {
       delay: 0.05 * index,
-      type: "spring",
-      stiffness: 50,
     },
   }),
-};
-
-const hoverAnimationVariants = {
-  hover: {
-    scale: 1.1,
-    rotate: [0, 5, -5, 5, 0], // Creates a wobbly effect
-    backgroundColor: "#F59E0B", // Amber-500 color
-    color: "#FFF",
-    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-    transition: {
-      type: "spring",
-      stiffness: 300,
-    },
-  },
-};
-
-const containerVariants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
 };
 
 export default function Skills() {
@@ -125,27 +102,31 @@ export default function Skills() {
       ref={ref}
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
-      <SectionHeading>My skills</SectionHeading>
-      <motion.ul
-        className="flex flex-wrap justify-center gap-4 text-lg text-gray-800"
-        variants={containerVariants}
-        initial="initial"
-        animate="animate"
-      >
+      <SectionHeading>My Skills</SectionHeading>
+      <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white border-black rounded-xl px-5 py-3 shadow-lg dark:bg-white/10 dark:text-white/80 transition-transform cursor-pointer"
+            className="bg-white borderBlack rounded-xl p-4 flex flex-col items-center justify-center gap-2 aspect-square dark:bg-white/10 dark:text-white/80 cursor-pointer"
             key={index}
             variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
             custom={index}
-            whileHover="hover"
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0 10px 15px rgba(0, 0, 0, 0.1)",
+              y: -5
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <motion.div variants={hoverAnimationVariants}>
-              {skill}
-            </motion.div>
+            <div className="text-4xl">{skill.icon}</div>
+            <span className="text-xs font-medium">{skill.name}</span>
           </motion.li>
         ))}
-      </motion.ul>
+      </ul>
     </section>
   );
 }

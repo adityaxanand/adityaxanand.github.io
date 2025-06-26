@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+// import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 import mindsMomImg from "@/public/mindsmom.png";
@@ -178,36 +178,77 @@ export const projectsData = [
   },
 ] as const;
 
+// lib/data.ts
+import { FaGolang } from "react-icons/fa6";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDocker, FaAws, FaPython, FaLinux } from 'react-icons/fa';
+import { SiTypescript, SiSocketdotio, SiNextdotjs, SiSpringboot, SiTailwindcss, SiPrisma, SiMongodb, SiRedux, SiGraphql, SiApollographql, SiExpress, SiPostgresql, SiDjango, SiKubernetes, SiDotnet } from 'react-icons/si';
+import { TbBrandFramerMotion } from 'react-icons/tb';
+import { VscTerminalLinux } from 'react-icons/vsc';
+import { AiOutlineApi } from 'react-icons/ai';
+
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "Socket.IO",
-  "React",
-  "Next.JS",
-  "Node.JS",
-  "Git/Github",
-  ".NET",
-  "Spring Boot",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
-  "Kubernetes",
-  "Docker",
-  "AWS",
-  "RESTful APIs",
-  "Linux",
-  "Kernel"
+  { name: "HTML", icon: React.createElement(FaHtml5) },
+  { name: "CSS", icon: React.createElement(FaCss3Alt) },
+  { name: "JavaScript", icon: React.createElement(FaJs) },
+  { name: "Golang", icon: React.createElement(FaGolang) },
+  { name: "TypeScript", icon: React.createElement(SiTypescript) },
+  { name: "React", icon: React.createElement(FaReact) },
+  { name: "Next.js", icon: React.createElement(SiNextdotjs) },
+  { name: "Node.js", icon: React.createElement(FaNodeJs) },
+  { name: "Express", icon: React.createElement(SiExpress) },
+  { name: "Socket.IO", icon: React.createElement(SiSocketdotio) },
+  { name: "Spring Boot", icon: React.createElement(SiSpringboot) },
+  { name: ".NET", icon: React.createElement(SiDotnet) },
+  { name: "Tailwind", icon: React.createElement(SiTailwindcss) },
+  { name: "Prisma", icon: React.createElement(SiPrisma) },
+  { name: "MongoDB", icon: React.createElement(SiMongodb) },
+  { name: "PostgreSQL", icon: React.createElement(SiPostgresql) },
+  { name: "Redux", icon: React.createElement(SiRedux) },
+  { name: "GraphQL", icon: React.createElement(SiGraphql) },
+  { name: "Apollo", icon: React.createElement(SiApollographql) },
+  { name: "Python", icon: React.createElement(FaPython) },
+  { name: "Django", icon: React.createElement(SiDjango) },
+  { name: "Git", icon: React.createElement(FaGitAlt) },
+  { name: "GitHub", icon: React.createElement(FaGithub) },
+  { name: "Docker", icon: React.createElement(FaDocker) },
+  { name: "Kubernetes", icon: React.createElement(SiKubernetes) },
+  { name: "AWS", icon: React.createElement(FaAws) },
+  { name: "RESTful APIs", icon: React.createElement(AiOutlineApi) },
+  { name: "Linux", icon: React.createElement(FaLinux) },
+  { name: "Kernel", icon: React.createElement(VscTerminalLinux) },
+  { name: "Framer Motion", icon: React.createElement(TbBrandFramerMotion) },
 ] as const;
+
+// export const skillsData = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   "TypeScript",
+//   "Socket.IO",
+//   "React",
+//   "Next.JS",
+//   "Node.JS",
+//   "Git/Github",
+//   ".NET",
+//   "Spring Boot",
+//   "Tailwind",
+//   "Prisma",
+//   "MongoDB",
+//   "Redux",
+//   "GraphQL",
+//   "Apollo",
+//   "Express",
+//   "PostgreSQL",
+//   "Python",
+//   "Django",
+//   "Framer Motion",
+//   "Kubernetes",
+//   "Docker",
+//   "AWS",
+//   "RESTful APIs",
+//   "Linux",
+//   "Kernel"
+// ] as const;
 
 // export const achievementsData = [
 //   {

@@ -65,7 +65,7 @@ export default function Intro() {
         <span className="font-bold">Backend Developer</span> with{" "}
         <span className="font-bold">2 years</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="font-bold">React (Next.js) and Node.js with MongoDB.</span>.
+        <span className="font-bold">React (Next.JS) and Golang, Node.JS with MongoDB.</span>.
       </motion.h1>
 
       <motion.div
