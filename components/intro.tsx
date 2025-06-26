@@ -90,7 +90,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-100 hover:scale-100 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10" // changed the hover and focus scale to 100 from 110 to remove enlargement on hover
-          href="/Aditya_Fresher_SWE.pdf"
+          href="/Resume_Aditya_Fresher_SWE.pdf"
           download
         >
           Download CV{" "}
