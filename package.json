@@ -28,6 +28,7 @@
     "eslint-config-next": "13.4.7",
     "framer-motion": "^10.18.0",
     "gray-matter": "^4.0.3",
+    "leetcode-query": "^2.0.0",
     "lucide-react": "^0.475.0",
     "next": "13.4.8",
     "nodemailer": "^6.10.0",

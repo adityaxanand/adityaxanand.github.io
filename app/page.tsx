@@ -8,6 +8,7 @@ import Skills from "@/components/skills";
 import Achievements from "@/components/achievements";
 import CompetitiveProgramming from "@/components/competitive-programming";
 import Certifications from "@/components/certifications";
+import LeetCodeSection from "@/components/leetcode";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Achievements />
+      <LeetCodeSection />
       <CompetitiveProgramming />
       <Certifications />
       <Contact />
