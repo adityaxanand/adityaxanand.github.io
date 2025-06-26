@@ -269,62 +269,114 @@ export const skillsData = [
 //   },
 // ] as const;
 
-export const achievementsData = [
 
+
+export const achievementsData = [
   {
     title: "ICPC Asia Regionalist '24",
-    shortDescription: "Qualified as an ICPC Asia Regionalist 2024, competing in one of the most prestigious global programming contests.",
+    shortDescription: "Qualified for the prestigious global programming regionals.",
     description:
-      "Participated in ICPC Asia Regionals 2024, showcasing problem-solving skills and algorithmic expertise in a globally recognized competitive programming event.",
+      "Showcased problem-solving skills and algorithmic expertise in a globally recognized competitive programming event.",
     imageUrl: icpcImg,
     link: "https://codeforces.com/blog/entry/53241",
+    cardColor: "#4F46E5", // Indigo
   },
-
-  // {
-  //   title: "1st Prize Winner - VISIONARY Hackathon",
-  //   shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
-  //   description:
-  //     "Developed, MediAR enhances healthcare by providing AR-based surgical visualizations, helping doctors plan procedures and patients understand treatments through immersive experiences.",
-  //   imageUrl: hackathonImg,
-  //   link: "https://xathon.mettl.com/event/",
-  // },
-
   {
     title: "4 Star on CodeChef",
-    shortDescription: "Achieved a 4-Star rating (1829) on CodeChef, excelling in competitive programming challenges.",
+    shortDescription: "Achieved a 4-Star rating (1829) on CodeChef.",
     description:
-      "Consistently solved complex algorithmic problems on CodeChef, improving problem-solving skills and ranking among top competitive programmers.",
+      "Consistently solved complex algorithmic problems, ranking among top competitive programmers on the platform.",
     imageUrl: codechefImg,
     link: "https://codechef.com/users/adityaxanand",
+    cardColor: "#D97706", // Amber
   },
-
   {
-    title: "CodeCrate - NIT Durgapur Contest",
-    shortDescription: "Secured 1st position in the college event online contest conducted by RECursion Society.",
+    title: "CodeCrate Contest Winner",
+    shortDescription: "Secured 1st place in a contest by RECursion Society, NIT Durgapur.",
     description:
-      "Secured 1st position in the college event online contest conducted and got 7k as a prize money.",
+      "Competed against talented programmers and secured the first position in a challenging online coding contest.",
+    imageUrl: hactoberfestImg, // Assuming you might want a different image here
+    link: "https://github.com/adityaxanand",
+    cardColor: "#10B981", // Emerald
+  },
+  {
+    title: "Hacktoberfest Contributor",
+    shortDescription: "Contributed to various open-source application development projects.",
+    description:
+      "Enhanced user security in a safety application and worked on a data mining project to extract valuable insights.",
     imageUrl: hactoberfestImg,
     link: "https://github.com/adityaxanand",
+    cardColor: "#EC4899", // Pink
   },
-
   {
-    title: "Hacktoberfest - Open Source Contributor",
-    shortDescription: "Contributed to various projects in application development, focusing on creating innovative and user-friendly solutions.",
+    title: "Google Developer Student Clubs",
+    shortDescription: "Active member, contributing to web projects and events.",
     description:
-      "Developed a safety application aimed at enhancing user security and providing real-time alerts. Worked on AI/ML development projects, including a data mining project to extract valuable insights from large datasets.",
-    imageUrl: hactoberfestImg,
-    link: "https://github.com/adityaxanand",
-  },
-
-  {
-    title: "Google Developer Student Clubs - Ranchi",
-    shortDescription: "Attended tech events, contributed to web projects, and assisted in organizing small events.",
-    description:
-      "I participated in various tech events, in development and networking. Contributed to projects, improving the user experience. Additionally, helped in organizing small events, ensuring smooth execution among participants.",
+      "Participated in various tech events, contributed to projects to improve user experience, and assisted in event organization.",
     imageUrl: gdscImg,
     link: "https://github.com/adityaxanand",
+    cardColor: "#DB2777", // Fuchsia
   },
-];
+] as const;
+
+
+
+// export const achievementsData = [
+
+//   {
+//     title: "ICPC Asia Regionalist '24",
+//     shortDescription: "Qualified as an ICPC Asia Regionalist 2024, competing in one of the most prestigious global programming contests.",
+//     description:
+//       "Participated in ICPC Asia Regionals 2024, showcasing problem-solving skills and algorithmic expertise in a globally recognized competitive programming event.",
+//     imageUrl: icpcImg,
+//     link: "https://codeforces.com/blog/entry/53241",
+//   },
+
+//   // {
+//   //   title: "1st Prize Winner - VISIONARY Hackathon",
+//   //   shortDescription: "Secured 1st place in VISIONARY Hackathon conducted by Mercer | Mettl among 500+ participants.",
+//   //   description:
+//   //     "Developed, MediAR enhances healthcare by providing AR-based surgical visualizations, helping doctors plan procedures and patients understand treatments through immersive experiences.",
+//   //   imageUrl: hackathonImg,
+//   //   link: "https://xathon.mettl.com/event/",
+//   // },
+
+//   {
+//     title: "4 Star on CodeChef",
+//     shortDescription: "Achieved a 4-Star rating (1829) on CodeChef, excelling in competitive programming challenges.",
+//     description:
+//       "Consistently solved complex algorithmic problems on CodeChef, improving problem-solving skills and ranking among top competitive programmers.",
+//     imageUrl: codechefImg,
+//     link: "https://codechef.com/users/adityaxanand",
+//   },
+
+//   {
+//     title: "CodeCrate - NIT Durgapur Contest",
+//     shortDescription: "Secured 1st position in the college event online contest conducted by RECursion Society.",
+//     description:
+//       "Secured 1st position in the college event online contest conducted and got 7k as a prize money.",
+//     imageUrl: hactoberfestImg,
+//     link: "https://github.com/adityaxanand",
+//   },
+
+//   {
+//     title: "Hacktoberfest - Open Source Contributor",
+//     shortDescription: "Contributed to various projects in application development, focusing on creating innovative and user-friendly solutions.",
+//     description:
+//       "Developed a safety application aimed at enhancing user security and providing real-time alerts. Worked on AI/ML development projects, including a data mining project to extract valuable insights from large datasets.",
+//     imageUrl: hactoberfestImg,
+//     link: "https://github.com/adityaxanand",
+//   },
+
+//   {
+//     title: "Google Developer Student Clubs - Ranchi",
+//     shortDescription: "Attended tech events, contributed to web projects, and assisted in organizing small events.",
+//     description:
+//       "I participated in various tech events, in development and networking. Contributed to projects, improving the user experience. Additionally, helped in organizing small events, ensuring smooth execution among participants.",
+//     imageUrl: gdscImg,
+//     link: "https://github.com/adityaxanand",
+//   },
+// ];
 
 
 
