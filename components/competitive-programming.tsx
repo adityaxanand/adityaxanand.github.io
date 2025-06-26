@@ -494,7 +494,7 @@ export default function CompetitiveProgramming() {
       {/* Profile Links */}
       <div className="flex justify-center space-x-4 my-8">
         <a
-          href="https://codeforces.com/profile/anandxaditya"
+          href="https://codeforces.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
