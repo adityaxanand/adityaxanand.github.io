@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    title: "Top 100 in Codeforces Round #",
+    title: "Top 200 in Codeforces Round #",
     description: "Achieved a personal best rank among thousands of participants.",
     date: "2024-05-10",
   },

@@ -504,7 +504,7 @@ export default function CompetitiveProgramming() {
           </button>
         </a>
         <a
-          href="https://www.codechef.com/users/adityaxanand"
+          href="https://www.codechef.com/users/"
           target="_blank"
           rel="noopener noreferrer"
         >

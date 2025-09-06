@@ -13,7 +13,8 @@ export default function LeetCodeSection() {
 
       <div className="flex justify-center my-8">
         <a
-          href={`https://leetcode.com/${process.env.NEXT_PUBLIC_LEETCODE_USERNAME}`}
+          // href={`https://leetcode.com/${process.env.NEXT_PUBLIC_LEETCODE_USERNAME}`}
+          href={`https://leetcode.com/`}
           target="_blank"
           rel="noopener noreferrer"
         >
