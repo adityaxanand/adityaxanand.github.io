@@ -287,7 +287,7 @@ export const achievementsData = [
     description:
       "Consistently solved complex algorithmic problems, ranking among top competitive programmers on the platform.",
     imageUrl: codechefImg,
-    link: "https://codechef.com/users/adityaxanand",
+    link: "https://codechef.com/users/",
     cardColor: "#D97706", // Amber
   },
   {
